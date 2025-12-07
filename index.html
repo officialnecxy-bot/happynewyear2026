@@ -95,24 +95,42 @@
             text-shadow: 0 1px 1px rgba(0,0,0,0.2); margin-bottom: 10px;
             border-bottom: 2px dashed #ef6c00; display: inline-block; padding-bottom: 5px;
         }
+
+        /* --- NAME & SENDER STYLES --- */
         .sender-name {
-            font-family: 'Rozha One', serif; font-size: 1.8rem; color: #c62828;
-            margin: 5px 0; text-decoration: underline wavy #ff9933;
+            font-family: 'Rozha One', serif; 
+            font-size: 2rem; 
+            color: #c62828;
+            margin-top: 10px;
+            text-decoration: underline wavy #ff9933;
+            line-height: 1.2;
         }
+        
+        .sub-text {
+            font-size: 14px; 
+            color: #555; 
+            margin-top: 5px;
+            font-weight: normal;
+        }
+
         .blessing-box {
             width: 100%; background: #ffe0b2; padding: 15px;
             border-radius: 10px; border: 2px dashed #e65100;
-            font-size: 1.1rem; color: #bf360c; line-height: 1.5; margin-top: 5px;
+            font-size: 1.1rem; color: #bf360c; line-height: 1.5; margin-top: 15px;
         }
 
-        /* --- ADS --- */
+        /* --- ADS CONTAINER --- */
         .ad-container {
-            width: 100%; background: #fafafa; border: 1px dashed #bbb;
-            min-height: 50px; display: flex; align-items: center; justify-content: center;
-            font-size: 10px; color: #999; margin-bottom: 15px;
+            width: 100%; 
+            background: #fafafa; 
+            border: 1px dashed #bbb;
+            min-height: 60px; /* Adjusted for banner height */
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
+            margin-bottom: 15px;
         }
 
-        /* --- INPUT HIGHLIGHT BOX (NEW) --- */
+        /* --- INPUT HIGHLIGHT BOX --- */
         .create-box-highlight {
             width: 100%;
             background: #ffffff;
@@ -139,15 +157,21 @@
         }
 
         .btn-create { background: linear-gradient(to right, #ff512f, #dd2476); color: white; border: 2px solid white; }
-        .btn-whatsapp { background: #25D366; color: white; border: 2px solid white; text-decoration: none; display: block; animation: pulseBtn 1.5s infinite; }
+        .btn-whatsapp { 
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white; border: 2px solid white; 
+            text-decoration: none; display: block; 
+            animation: pulseBtn 1s infinite;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+        }
 
         /* --- ANIMATIONS --- */
         @keyframes rotateBG { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
         @keyframes floatOm { 0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); } 50% { transform: scale(1.05); box-shadow: 0 0 50px rgba(255, 215, 0, 0.9); } }
-        @keyframes pulseBtn { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+        @keyframes pulseBtn { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
         
-        /* Attention Animation for Input Box */
         @keyframes attentionPulse {
             0% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.4); transform: scale(1); }
             70% { box-shadow: 0 0 0 10px rgba(211, 47, 47, 0); transform: scale(1.02); }
@@ -162,7 +186,7 @@
 
     <div class="ticker-wrap">
         <div class="ticker-move">
-            🕉️ ॐ नमः शिवाय! आपको और आपके परिवार को नए साल 2026 की हार्दिक शुभकामनाएं। ईश्वर आपकी हर मनोकामना पूरी करें। 🕉️
+            🕉️ ॐ नमः शिवाय! यह चमत्कारी संदेश आपके पास आया है। इसे 11 लोगों को भेजें और 24 घंटे में चमत्कार देखें। 🕉️
         </div>
     </div>
 
@@ -170,7 +194,18 @@
         
         <div class="mandir-card">
             
-            <div class="ad-container">विज्ञापन (Ad Space)</div>
+            <div class="ad-container">
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '9c3301058f67e26af893548e7718f2e1',
+                        'format' : 'iframe',
+                        'height' : 50,
+                        'width' : 320,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/9c3301058f67e26af893548e7718f2e1/invoke.js"></script>
+            </div>
 
             <div class="om-main-container">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Om_symbol.svg/1024px-Om_symbol.svg.png" 
@@ -181,8 +216,8 @@
             <div class="title">हर हर महादेव</div>
             <div class="year-text">✨ नूतन वर्ष 2026 ✨</div>
 
-            <div style="font-size: 13px; color: #555; margin-top: 5px;">की तरफ से शुभकामनाएं:</div>
             <div class="sender-name" id="displayName">आपका नाम</div>
+            <div class="sub-text">की तरफ से शुभकामनाएं:</div>
 
             <div class="blessing-box">
                 "ॐ नमः शिवाय!<br>
@@ -193,25 +228,41 @@
 
             <div id="create-section" class="create-box-highlight">
                 <p style="color: #d32f2f; font-weight: bold; font-size: 14px; margin-bottom: 5px;">👇 यहाँ अपना नाम लिखकर जादू देखें 👇</p>
-                <input type="text" id="nameInput" placeholder="अपना नाम लिखें...">
+                <input type="text" id="nameInput" placeholder="आपका शुभ नाम...">
                 <button class="btn-action btn-create" onclick="generateLink()">👉 कार्ड बनाएं (Create) 👈</button>
             </div>
 
             <div id="share-section" style="display: none; margin-top: 20px; width: 100%;">
-                <div style="background: #e8f5e9; border: 2px dashed #2e7d32; padding: 10px; border-radius: 10px; margin-bottom: 15px;">
-                    <p style="color: #1b5e20; font-weight: bold; font-size: 14px;">
-                        ✅ आपका कार्ड तैयार है!<br>
-                        इसे शेयर करें और सबको बधाई दें।
+                
+                <div style="background: #ffebee; border: 3px dashed #d32f2f; padding: 15px; border-radius: 15px; margin-bottom: 15px; animation: attentionPulse 2s infinite;">
+                    <p style="color: #c62828; font-weight: bold; font-size: 16px; line-height: 1.5;">
+                        🛑 <b>रुकिए!</b><br>
+                        आपका कार्ड बन गया है।<br><br>
+                        ⚠️ <b>नियम:</b> इस संदेश को <b>11 लोगों को</b> या <b>5 ग्रुप्स में</b> शेयर करें।<br>
+                        मान्यता है कि ऐसा करने से आपकी मनोकामना पूरी होगी। 🙏
                     </p>
                 </div>
+
                 <a href="#" id="waButton" class="btn-action btn-whatsapp">
-                    📲 WhatsApp पर भेजें
+                    📲 WhatsApp पर शेयर करें
                 </a>
+                <p style="font-size: 12px; color: #555; margin-top: 10px;">(Share करके पुण्य कमाएं)</p>
             </div>
 
-        </div> </div> <div style="width: 95%; max-width: 420px; background: white; margin: 0 auto 20px auto; border: 1px solid #ccc; text-align: center; padding: 10px; font-size: 12px; color: #999;">
-        विज्ञापन (Bottom Ad Space)
+        </div> </div> <div style="width: 100%; max-width: 420px; background: white; margin: 0 auto 20px auto; border: 1px solid #ccc; text-align: center; display:flex; justify-content:center; padding: 10px;">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '9c3301058f67e26af893548e7718f2e1',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/9c3301058f67e26af893548e7718f2e1/invoke.js"></script>
     </div>
+
+    <script type="text/javascript" src="//pl28211376.effectivegatecpm.com/bd/05/c2/bd05c2f6a6c15812ea914d02f29cfcc4.js"></script>
 
     <script>
         // --- LOGIC ---
@@ -245,7 +296,9 @@
 
             const baseUrl = window.location.href.split('?')[0];
             const finalLink = `${baseUrl}?n=${encodeURIComponent(myName)}`;
-            const msg = `🕉️ *${myName}* ने आपको *नए साल 2026* का विशेष आशीर्वाद भेजा है!%0A%0Aअपना नाम देखें:%0A👇👇👇%0A${finalLink}%0A%0A*ॐ नमः शिवाय!*`;
+
+            // Viral Message (With 11 People Instructions)
+            const msg = `🕉️ *${myName}* ने आपको *नए साल 2026* का विशेष आशीर्वाद भेजा है!%0A%0Aअपना नाम देखें:%0A👇👇👇%0A${finalLink}%0A%0A⚠️ *इस संदेश को 11 लोगों को भेजें, आपकी मनोकामना 24 घंटे में पूरी होगी।*%0A*ॐ नमः शिवाय!*`;
 
             document.getElementById('waButton').href = `https://wa.me/?text=${msg}`;
             document.getElementById('create-section').style.display = 'none';
